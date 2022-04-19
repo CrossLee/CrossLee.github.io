@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="社交产品有那么多了，为什么还要多这一个？在开发这个社交小程序之前我思考了很久。 先说说初衷。对于我来讲，有一个可能相对小众的需求：和不同的陌生人面对面交流。如今社会给予我的压力太大，卷在职场，回家躺平，几乎没有其他办法能让我从这种状态下解脱。这种跨行业或者不同人生阅历的面对面交流会让我很放松，什么都可以说，情感愉悦度高。曾经每次开车跨城市出差，我都会发个顺风车拉个人同行，不是为了赚点钱，而是享受这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发了一款社交工具小程序">
+<meta property="og:url" content="http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="Cross&#39;s Blog">
+<meta property="og:description" content="社交产品有那么多了，为什么还要多这一个？在开发这个社交小程序之前我思考了很久。 先说说初衷。对于我来讲，有一个可能相对小众的需求：和不同的陌生人面对面交流。如今社会给予我的压力太大，卷在职场，回家躺平，几乎没有其他办法能让我从这种状态下解脱。这种跨行业或者不同人生阅历的面对面交流会让我很放松，什么都可以说，情感愉悦度高。曾经每次开车跨城市出差，我都会发个顺风车拉个人同行，不是为了赚点钱，而是享受这">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-01T05:06:31.000Z">
+<meta property="article:modified_time" content="2022-04-19T05:07:30.550Z">
+<meta property="article:author" content="Cross">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>开发了一款社交工具小程序</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&text=开发了一款社交工具小程序"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&is_video=false&description=开发了一款社交工具小程序"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=开发了一款社交工具小程序&body=Check out this article: http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&name=开发了一款社交工具小程序&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&t=开发了一款社交工具小程序"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        开发了一款社交工具小程序
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Cross</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-04-01T05:06:31.000Z" itemprop="datePublished">2022-04-01</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>社交产品有那么多了，为什么还要多这一个？在开发这个社交小程序之前我思考了很久。</p>
+<p>先说说初衷。对于我来讲，有一个可能相对小众的需求：和不同的陌生人面对面交流。如今社会给予我的压力太大，卷在职场，回家躺平，几乎没有其他办法能让我从这种状态下解脱。这种跨行业或者不同人生阅历的面对面交流会让我很放松，什么都可以说，情感愉悦度高。曾经每次开车跨城市出差，我都会发个顺风车拉个人同行，不是为了赚点钱，而是享受这不算长也不算短的陌生人交流时光。</p>
+<p>出于个人需求，我下载了很多社交软件，慢慢的去使用去体验，发现约见面社交太难了。归纳了一下，大概原因有：</p>
+<ul>
+<li>托太多，约见面就要约你去酒吧消费。</li>
+<li>出于安全原因，女性不会轻易和陌生人见面。</li>
+<li>这么多年的发展，用户已经不信任社交软件，优质用户流失。</li>
+<li>迫于现实生活压力，在社交软件体验现实生活没有的存在感。</li>
+</ul>
+<p>在寻找了一圈没有合适的产品，我计划自己开发。如果有合适的产品能满足我的需求，可以告诉我。</p>
+<p>这个产品一定不会是第二个微信、第二个陌陌、第二个探探、以及第二个 Soul。我理想中的产品是一个工具类型的产品，没有 UGC，没有聊天框，目标简单：通过工具让用户真实、安全、便捷的见面社交。</p>
+<p>可能有人会问，没有聊天框，不让聊怎么知道合不合适。我认为陌生人在社交软件里聊是不会聊出什么花样的，80% 的人会把天聊的很尴尬，最后不了了之。相反不让聊天，只根据产品给出的选项做选择就会很简单，比如：对方照片你是否满意，选择 YES 或者 NO；比如工具推送的地点远近你是否可以接收，选择 YES 或 NO，当双方所有都选择 YES 后，那么见面社交意向就很强烈。</p>
+<p>“真实”和“安全”是基本盘。“真实”做到完美很难，有网络就有虚假，靠用户自觉做到处处真实是不切实际的，所以我认为提高作假的门槛即可，比如虚假资料受到举报封号后，不能再注册账号，或者再注册账号成本很高（同一微信号及关联的手机号不能再次登录）。其次“安全”由公立场合来保证，即双方都不能指定地点，由工具指定。最后“便捷”也很重要，因为孤独感亦或是失落感来之某一时刻的情景触动，若此时能见个和自己毫不相干的陌生人互相倾述和排解是非常好的，过了这个时间点我可能就不需要排解了。</p>
+<p>那如何让两个陌生人见面呢？两个陌生人为什么要见面？我认为是处于相同时间点相同状态下的两个人愿意见面的概率是相对高的。比如：今天下班后想看场日本恐怖电影；午后约个下午茶聊聊 2022 国足世界杯预选赛之旅。这些是某个时刻某个状态下所产生的社交诉求，还有一些是长久的社交诉求，比如：完成 2022 的 Flag，春节带个对象回家过年。</p>
+<p>产品体验很重要，这款工具产品无需付费开会员，也无需 VIP 解锁高级功能，所有功能对使用者都是一样的。因为是工具产品，能简单解决问题就简单，所以也不用下载 App，微信小程序即可使用。也不用填写问卷、不用性格测试、不用填写一堆 Tag 生成 Profile，只在必要的环节添加必要的信息即可。</p>
+<p>有兴趣的朋友可以微信搜一搜：Teem<br>Teem 是 Meet 单词倒序写法，表达了真实见面社交的观点。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&text=开发了一款社交工具小程序"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&is_video=false&description=开发了一款社交工具小程序"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=开发了一款社交工具小程序&body=Check out this article: http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=开发了一款社交工具小程序"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&name=开发了一款社交工具小程序&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/04/01/%E5%BC%80%E5%8F%91%E4%BA%86%E4%B8%80%E6%AC%BE%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F/&t=开发了一款社交工具小程序"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2008-2022
+    Cross
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

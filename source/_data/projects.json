@@ -1,0 +1,12 @@
+[
+    {
+       "name":"Teem",
+       "url":"https://github.com/CrossLee/Teem",
+       "desc":"A social tool for strangers meetup"
+    },
+    {
+       "name":"Ecard",
+       "url":"https://github.com/CrossLee/ecard",
+       "desc":"Multi-identity business card generation tool"
+    }
+]
