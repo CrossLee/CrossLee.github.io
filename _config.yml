@@ -104,6 +104,6 @@ theme: cactus
 deploy:
   type: git
   repo: git@github.com:CrossLee/CrossLee.github.io.git
-  branch: main
+  branch: gh-pages
   message: post
   token: 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
