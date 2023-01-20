@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="去年夏天经过长时间的调研与思考，参与了移动充电桩项目的建设，移动充电桩于 2023 年 1 月 15 日落地深圳，虽然产品上还有很多瑕疵需要修改迭代，但也算是在寻找 PMF 的过程中一个小小的里程碑，值得写下来纪念一下。在没有被现实狠狠教训之前，总是觉得产品一定能行，这次我还是选择相信自己的判断，这也许就是创业者的执念吧。 电动汽车越来越多，充电需求也会随之快速增长。固定充电桩可以满足大部分的需求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动充电桩">
+<meta property="og:url" content="http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/index.html">
+<meta property="og:site_name" content="Cross&#39;s Blog">
+<meta property="og:description" content="去年夏天经过长时间的调研与思考，参与了移动充电桩项目的建设，移动充电桩于 2023 年 1 月 15 日落地深圳，虽然产品上还有很多瑕疵需要修改迭代，但也算是在寻找 PMF 的过程中一个小小的里程碑，值得写下来纪念一下。在没有被现实狠狠教训之前，总是觉得产品一定能行，这次我还是选择相信自己的判断，这也许就是创业者的执念吧。 电动汽车越来越多，充电需求也会随之快速增长。固定充电桩可以满足大部分的需求">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-19T12:14:35.000Z">
+<meta property="article:modified_time" content="2023-01-20T13:56:15.039Z">
+<meta property="article:author" content="Cross">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>移动充电桩</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/05/12/%E7%94%B5%E5%AD%90%E5%90%8D%E7%89%87/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&text=移动充电桩"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&is_video=false&description=移动充电桩"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=移动充电桩&body=Check out this article: http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&name=移动充电桩&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&t=移动充电桩"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        移动充电桩
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Cross</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-01-19T12:14:35.000Z" itemprop="datePublished">2023-01-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>去年夏天经过长时间的调研与思考，参与了移动充电桩项目的建设，移动充电桩于 2023 年 1 月 15 日落地深圳，虽然产品上还有很多瑕疵需要修改迭代，但也算是在寻找 PMF 的过程中一个小小的里程碑，值得写下来纪念一下。在没有被现实狠狠教训之前，总是觉得产品一定能行，这次我还是选择相信自己的判断，这也许就是创业者的执念吧。</p>
+<p>电动汽车越来越多，充电需求也会随之快速增长。固定充电桩可以满足大部分的需求，但是有些场景固定充电桩永远解决不了。<br>建设固定充电桩需要满足一些条件：</p>
+<ul>
+<li>选择场地</li>
+<li>施工（挖地、走线、安装、浇筑等）</li>
+<li>消防安全审批</li>
+<li>配电容量申请</li>
+<li>建配电房</li>
+</ul>
+<p>以上任何一条满足不了的场景，都是移动充电桩的应用场景。而且在固定桩无法满足充电需求时，移动充电桩也可以作为替补角色发挥作用。移动充电桩自带储能，配合自动导航机器人（AGV）可以自动找到车位，实现桩找车。</p>
+<ul>
+<li>老旧小区由于电线电路年代久远等种种因素，无法提升配电容量，这意味着小区内几乎无法提供哪怕一根充电桩的安装，小区内的电车必须到附近的充电站充电。移动充电桩可以很好的解决这些电车车主的充电需求。</li>
+<li>高速服务区内固定充电桩的数量固定，一旦遇到节假日，电车排队充电快则等待 1 - 2 小时，多则半天一天。通过实时调度移动充电桩可以满足此类场景的充电需求。</li>
+<li>大型会议、演唱会、体育赛事等停车场充电场景，没有举办活动时，充电需求寥寥无几；一旦举办活动，仅有的几根充电桩肯定也无法满足大量的电车充电。和高速服务区场景类似，移动充电桩可以很好的满足此类需求。</li>
+<li>高端写字楼、CBD 可以也可以引进移动充电桩提高科技形象。</li>
+<li>…</li>
+</ul>
+<p>目前市面上大部分 AGV 技术实现都是通过激光雷达感知周围环境、获取轮廓信息来达到目标精准识别，通常用于室内（厂区、办公区等）相对简单的场景。而移动充电桩不仅仅在室内工作，也要在露天停车场工作，这给我们的产品带来了不小的挑战。未来会怎样，让时间来说话。</p>
+<p>纵有疾风起，人生不言弃。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&text=移动充电桩"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&is_video=false&description=移动充电桩"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=移动充电桩&body=Check out this article: http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&title=移动充电桩"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&name=移动充电桩&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/01/19/%E7%A7%BB%E5%8A%A8%E5%85%85%E7%94%B5%E6%A1%A9/&t=移动充电桩"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2008-2023
+    Cross
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/CrossLee">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
