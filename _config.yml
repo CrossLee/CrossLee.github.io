@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - tici/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -106,4 +107,3 @@ deploy:
   repo: git@github.com:CrossLee/CrossLee.github.io.git
   branch: gh-pages
   message: post
-  token: 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
