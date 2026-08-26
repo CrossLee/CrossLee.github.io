@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>4K提词使用支持</title>
+  <title>4K提词使用支持 / Support</title>
   <style>
     :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     body { margin: 0; background: #07100e; color: #f5f7f6; line-height: 1.75; }
@@ -15,35 +15,107 @@
     a { color: #5ee6b3; }
     .eyebrow { color: #ff9f43; font-weight: 700; letter-spacing: .08em; }
     .card { background: #121917; border: 1px solid #28332f; border-radius: 18px; padding: 20px; }
+    .language-links { margin: 8px 0 28px; }
+    .divider { border: 0; border-top: 1px solid #28332f; margin: 56px 0; }
+    code { color: #f5f7f6; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
   <main>
     <div class="eyebrow">4K提词</div>
-    <h1>使用支持</h1>
-    <p class="card">4K提词目前仅支持竖屏固定机位口播，并要求设备前置摄像头提供精确的 3840 × 2160、30 fps 采集格式。不满足条件的设备会明确阻止录制，不会用 1080p 冒充 4K。</p>
+    <p class="language-links"><a href="#zh-CN">中文</a> · <a href="#en">English</a></p>
 
-    <h2>推荐流程</h2>
-    <ol>
-      <li>在“编辑口播稿”中输入内容并设置字/分速度。</li>
-      <li>固定手机位置，完成三条样片盲选校准。</li>
-      <li>进入拍摄页，按需要上下滑调速或暂停滚动。</li>
-      <li>停止录制并等待文件校验或本机自然模式处理完成。</li>
-      <li>回看后主动保存到系统照片。</li>
-    </ol>
+    <section id="zh-CN" lang="zh-CN">
+      <h1>使用支持</h1>
+      <p class="card">4K提词使用设备前置摄像头进行本机提词拍摄，并要求前置摄像头提供精确的 3840 × 2160、30 fps 采集格式。不满足条件的设备会明确阻止录制，不会用 1080p 冒充 4K。</p>
 
-    <h2>常见问题</h2>
-    <h3>为什么无法开始录制？</h3>
-    <p>请确认已经允许相机和麦克风权限，并使用支持前置 4K/30 的 iPhone。模拟器和不满足精确格式的设备不能录制。</p>
+      <h2>推荐流程</h2>
+      <ol>
+        <li>在“编辑口播稿”中输入内容并设置字/分速度。</li>
+        <li>固定手机位置，完成三条样片盲选校准。</li>
+        <li>进入拍摄页，按需要调整提词位置、速度或暂停滚动。</li>
+        <li>停止录制并等待文件校验或所选本机效果处理完成。</li>
+        <li>在当前回看页检查成片；需要系统照片副本时再主动保存，保存后点击“完成”。</li>
+      </ol>
 
-    <h3>提词文字会进入视频吗？</h3>
-    <p>不会。提词层只显示在屏幕预览上，不会写入成片。</p>
+      <h2>常见问题</h2>
+      <h3>为什么无法开始录制？</h3>
+      <p>请确认已经允许相机和麦克风权限，并使用支持前置 4K/30 的 iPhone。模拟器和不满足精确格式的设备不能录制。</p>
 
-    <h3>App 会上传人脸或视频吗？</h3>
-    <p>不会。原片、自然模式处理、稿件和目光校准均在设备本地完成。</p>
+      <h3>提词文字会进入视频吗？</h3>
+      <p>不会。提词层只显示在屏幕预览上，不会写入成片。</p>
 
-    <h3>如何请求支持？</h3>
-    <p>请通过<a href="/about/">开发者联系页面</a>联系开发者，并说明设备型号、iOS 版本、操作步骤和错误提示。请勿发送包含敏感信息的原始视频。</p>
+      <h3>App 会收集生物识别人脸数据或分析眼神吗？</h3>
+      <p>不会。App 不进行人脸识别、人脸特征提取或眼神分析，也不建立人脸库。相机预览、校准和录制只在本机处理普通 RGB 画面。TrueDepth 摄像头也仅作为普通 RGB 摄像头使用，不读取深度或人脸几何数据。</p>
+
+      <h3>三条目光校准短片如何工作？</h3>
+      <p>App 在本机生成三条每条约 4 秒的短片，由用户观看并人工盲选最自然的一条，不进行自动人脸或眼神分析。完成、离开、重录或文件无效时会删除临时短片；异常残留会在下次启动时清理。校准后仅保存标准化提词坐标、距离、镜像和模式，直到重新校准覆盖或卸载 App。</p>
+
+      <h3>预览、美颜和调色会检测或重塑人脸吗？</h3>
+      <p>不会。实时预览帧仅在 RAM 中处理；自然美颜和质感调色是本机整帧固定视觉处理，不检测、识别或重塑人脸。</p>
+
+      <h3>当前公开版本 Build 9 的录制保存在哪里，何时删除？</h3>
+      <p>录制原片和自然美颜输出都只在 App 临时目录中保留，没有录制历史，也不会写入 <code>Application Support</code>。有效视频仅供当前录制、处理和回看会话使用。点击“删除重拍”会立即删除；点击保存会先通过 PhotoKit 复制到系统照片，随后点击“完成”会删除 App 内临时视频。自然美颜成功后会先删除被替换原片；处理失败时临时保留原片供用户保存或删除。无效文件和失败中间文件立即清理；异常退出遗留的 <code>gazespot-UUID.mov</code> 会在下次启动时统一清理。</p>
+
+      <h3>保存到系统照片时会发生什么？</h3>
+      <p>只有用户主动点击保存时，App 才通过 PhotoKit“仅添加”权限复制所选成片；App 不读取照片图库。是否同步到 iCloud 由 iOS、Apple 账户和用户的系统设置控制。</p>
+
+      <h3>App 会上传、共享视频或加入第三方 SDK 吗？</h3>
+      <p>不会。App 不上传视频、音频、稿件、人脸画面或校准数据，不包含第三方 SDK，不出售或共享数据，不用于广告、分析、跟踪或模型训练。没有第三方接收者。打开支持页或隐私政策的网页链接也不携带视频或校准数据。</p>
+
+      <h3>在哪里查看完整隐私说明？</h3>
+      <p>请查看<a href="/tici/privacy-policy/">4K提词隐私政策</a>。</p>
+
+      <h3>如何请求支持？</h3>
+      <p>请联系 Suzhou Qidian Storm Information Technology Co., Ltd.：<a href="mailto:mag_lee@126.com">mag_lee@126.com</a>，并说明设备型号、iOS 版本、操作步骤和错误提示。请勿发送包含敏感信息的原始视频。</p>
+    </section>
+
+    <hr class="divider">
+
+    <section id="en" lang="en">
+      <h1>Support</h1>
+      <p class="card">4K Teleprompter records locally with the device's front camera and requires an exact 3840 × 2160 at 30 fps front-camera capture format. On devices that do not meet this requirement, recording is clearly blocked; the app does not present upscaled 1080p as 4K.</p>
+
+      <h2>Recommended Workflow</h2>
+      <ol>
+        <li>Enter your content in Edit Script and set the words-per-minute speed.</li>
+        <li>Secure the phone and complete the blinded selection among three calibration clips.</li>
+        <li>Open the recording screen and adjust teleprompter position or speed, or pause scrolling as needed.</li>
+        <li>Stop recording and wait for file validation or the selected on-device effect to finish.</li>
+        <li>Review the finished video on the current review screen. Save a copy to system Photos only if wanted, then tap Done.</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Why can't I start recording?</h3>
+      <p>Make sure camera and microphone permissions are allowed and use an iPhone that supports front-camera 4K at 30 fps. The simulator and devices without the exact required format cannot record.</p>
+
+      <h3>Does the teleprompter text appear in the video?</h3>
+      <p>No. The teleprompter layer appears only in the screen preview and is not written into the finished video.</p>
+
+      <h3>Does the app collect biometric face data or analyze gaze?</h3>
+      <p>No. The app does not perform face recognition, facial feature extraction, or gaze analysis, and it does not create a face database. Preview, calibration, and recording handle only ordinary RGB images on the device. A TrueDepth camera is also used only as an ordinary RGB camera; depth and face geometry data are not accessed.</p>
+
+      <h3>How do the three gaze-calibration clips work?</h3>
+      <p>The app creates three clips of about four seconds each on the device. The user watches them and manually selects the most natural one without knowing which option produced it; there is no automated face or gaze analysis. Temporary clips are deleted after completion, leaving calibration, recording again, or an invalid file. Any residue after an interruption is removed on the next launch. Only normalized teleprompter coordinates, distance, mirror setting, and mode are retained until recalibration replaces them or the app is uninstalled.</p>
+
+      <h3>Do preview, beauty, or color effects detect or reshape faces?</h3>
+      <p>No. Live preview frames are processed only in RAM. Natural Beauty and texture color grading are local, fixed, full-frame visual processing and do not detect, recognize, or reshape faces.</p>
+
+      <h3>Where does the current public Build 9 store recordings, and when are they deleted?</h3>
+      <p>Source recordings and Natural Beauty outputs remain only in the app's temporary directory. There is no Recording History, and recordings are not written to <code>Application Support</code>. A valid video is available only for the current recording, processing, and review session. Delete and Record Again removes it immediately. Save first copies it to system Photos through PhotoKit; tapping Done then removes the app's temporary video. After Natural Beauty succeeds, the replaced source is deleted first. If processing fails, the source remains temporarily for the user to save or delete. Invalid files and failed intermediate files are removed immediately. Any <code>gazespot-UUID.mov</code> left after an unexpected exit is removed on the next launch.</p>
+
+      <h3>What happens when I save to system Photos?</h3>
+      <p>Only when the user taps Save does the app copy the selected finished video using PhotoKit add-only permission. The app does not read the Photos library. iCloud syncing is controlled by iOS, the user's Apple Account, and system settings.</p>
+
+      <h3>Does the app upload or share videos or include third-party SDKs?</h3>
+      <p>No. The app does not upload video, audio, scripts, face images, or calibration data. It includes no third-party SDKs and does not sell or share data or use it for advertising, analytics, tracking, or model training. There are no third-party recipients. Links to Support or the Privacy Policy carry no video or calibration data.</p>
+
+      <h3>Where can I read the complete privacy information?</h3>
+      <p>Read the <a href="/tici/privacy-policy/">4K Teleprompter Privacy Policy</a>.</p>
+
+      <h3>How can I request support?</h3>
+      <p>Contact Suzhou Qidian Storm Information Technology Co., Ltd. at <a href="mailto:mag_lee@126.com">mag_lee@126.com</a>. Include the device model, iOS version, steps taken, and any error shown. Do not send original videos containing sensitive information.</p>
+    </section>
   </main>
 </body>
 </html>
