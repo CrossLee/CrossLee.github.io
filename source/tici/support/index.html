@@ -51,8 +51,8 @@
       <h3>三条目光校准短片如何工作？</h3>
       <p>App 在本机生成三条每条约 4 秒的短片，由用户观看并人工盲选最自然的一条，不进行自动人脸或眼神分析。完成、离开、重录或文件无效时会删除临时短片；异常残留会在下次启动时清理。校准后仅保存标准化提词坐标、距离、镜像和模式，直到重新校准覆盖或卸载 App。</p>
 
-      <h3>预览、美颜和调色会检测或重塑人脸吗？</h3>
-      <p>不会。实时预览帧仅在 RAM 中处理；自然美颜和质感调色是本机整帧固定视觉处理，不检测、识别或重塑人脸。</p>
+      <h3>预览和美颜会检测或重塑人脸吗？</h3>
+      <p>不会。实时预览帧仅在 RAM 中处理；自然美颜是本机整帧固定视觉处理，不检测、识别或重塑人脸。</p>
 
       <h3>当前公开版本 Build 9 的录制保存在哪里，何时删除？</h3>
       <p>录制原片和自然美颜输出都只在 App 临时目录中保留，没有录制历史，也不会写入 <code>Application Support</code>。有效视频仅供当前录制、处理和回看会话使用。点击“删除重拍”会立即删除；点击保存会先通过 PhotoKit 复制到系统照片，随后点击“完成”会删除 App 内临时视频。自然美颜成功后会先删除被替换原片；处理失败时临时保留原片供用户保存或删除。无效文件和失败中间文件立即清理；异常退出遗留的 <code>gazespot-UUID.mov</code> 会在下次启动时统一清理。</p>
@@ -98,8 +98,8 @@
       <h3>How do the three gaze-calibration clips work?</h3>
       <p>The app creates three clips of about four seconds each on the device. The user watches them and manually selects the most natural one without knowing which option produced it; there is no automated face or gaze analysis. Temporary clips are deleted after completion, leaving calibration, recording again, or an invalid file. Any residue after an interruption is removed on the next launch. Only normalized teleprompter coordinates, distance, mirror setting, and mode are retained until recalibration replaces them or the app is uninstalled.</p>
 
-      <h3>Do preview, beauty, or color effects detect or reshape faces?</h3>
-      <p>No. Live preview frames are processed only in RAM. Natural Beauty and texture color grading are local, fixed, full-frame visual processing and do not detect, recognize, or reshape faces.</p>
+      <h3>Do preview or Natural Beauty detect or reshape faces?</h3>
+      <p>No. Live preview frames are processed only in RAM. Natural Beauty is a local, fixed, full-frame visual effect and does not detect, recognize, or reshape faces.</p>
 
       <h3>Where does the current public Build 9 store recordings, and when are they deleted?</h3>
       <p>Source recordings and Natural Beauty outputs remain only in the app's temporary directory. There is no Recording History, and recordings are not written to <code>Application Support</code>. A valid video is available only for the current recording, processing, and review session. Delete and Record Again removes it immediately. Save first copies it to system Photos through PhotoKit; tapping Done then removes the app's temporary video. After Natural Beauty succeeds, the replaced source is deleted first. If processing fails, the source remains temporarily for the user to save or delete. Invalid files and failed intermediate files are removed immediately. Any <code>gazespot-UUID.mov</code> left after an unexpected exit is removed on the next launch.</p>
