@@ -28,7 +28,7 @@
 
     <section id="zh-CN" lang="zh-CN">
       <h1>隐私政策</h1>
-      <p class="updated">更新日期：2026 年 8 月 26 日</p>
+      <p class="updated">更新日期：2026 年 9 月 3 日 · 适用于 1.0.0 (25) 及之后使用相同数据处理方式的版本</p>
       <p class="card">4K提词不要求注册或登录。相机画面、录音、稿件、目光校准和视频处理均在用户设备本地完成。App 不上传这些内容，也不收集或提取生物识别人脸数据。</p>
 
       <h2>1. 与人脸有关的图像和目光校准</h2>
@@ -43,16 +43,16 @@
       <ul>
         <li><strong>实时预览：</strong>相机预览帧仅在运行内存（RAM）中处理，不作为预览图像持久保存。</li>
         <li><strong>校准短片：</strong>三条校准短片只写入 App 的临时目录。完成校准、离开校准页、重录或发现文件无效时立即删除；如果异常中断未能即时清理，App 会在下次启动时删除残留临时文件。</li>
-        <li><strong>当前公开版本 Build 9 的录制：</strong>录制原片和自然美颜输出都只保存在 App 的临时目录。Build 9 没有录制历史，也不会把录制写入 <code>Application Support</code>。有效原片或自然美颜成片仅在当前录制、处理和回看会话中保留。</li>
-        <li><strong>用户操作触发的删除：</strong>用户点击“删除重拍”时，App 立即删除当前临时视频。用户点击保存时，App 先通过 PhotoKit 把成片复制到系统照片；随后点击“完成”时，App 删除自己的临时视频。</li>
-        <li><strong>自然美颜处理：</strong>自然美颜成功后，App 先删除已被成片替换的原片；如果处理失败，则临时保留原片，供用户保存或删除。无效文件和处理失败产生的中间文件会立即清理。</li>
-        <li><strong>异常清理：</strong>如果异常退出留下名为 <code>gazespot-UUID.mov</code> 的临时录制，App 会在下次启动时统一删除。</li>
+        <li><strong>正式录制：</strong>每次通过基础文件校验的正式录制都会自动保存在 App 沙盒的 <code>Application Support/GazeSpot/RecordingLibrary/v1/records/&lt;recordID&gt;/</code>。同次录制的原片、1080p 效果预览、最终 4K 成片和必要兼容副本由同一条记录关联；该目录不会加入 App 备份。</li>
+        <li><strong>保留和删除：</strong>正式录制不会自动到期。关闭回看、点击“完成”、保存到系统照片或“保留并重拍”都不会删除 App 内记录。只有用户在“录制历史”中选择一条记录并确认删除，或卸载 App，才会移除相应 App 内文件；这不会删除此前保存到系统照片的副本。</li>
+        <li><strong>画面处理：</strong>自然美颜和质感调色均在本机处理。处理模式可先生成不可保存的 1080p 效果预览；用户确认后，App 会重新从原始 4K 文件生成最终 4K，不会把 1080p 预览放大成 4K。失败或未完成的中间文件会被清理，已校验的原片仍归属于同一条本机记录。</li>
+        <li><strong>异常恢复：</strong>App 使用原子记录和部分文件清理机制恢复完整的正式录制；未完成的 <code>.partial</code> 文件不会作为可播放成片显示。</li>
         <li><strong>稿件与设置：</strong>用户输入的稿件、滚动和拍摄设置保存在设备本地，供下次继续使用。</li>
-        <li><strong>麦克风：</strong>仅在用户开始录制时采集声音，声音作为当前录制的一部分临时保存在本机。</li>
+        <li><strong>麦克风：</strong>仅在用户主动录制时采集声音。正式录制中的音轨随该条本机录制按相同规则保留；校准样片中的音轨随临时样片一并删除。</li>
       </ul>
 
-      <h2>3. 整帧美颜处理</h2>
-      <p>自然美颜是对整帧 RGB 图像进行的本机固定视觉处理。该处理不检测、分割、识别或重塑人脸，不提取人脸关键点、面部几何或身份信息。</p>
+      <h2>3. 整帧美颜与质感调色</h2>
+      <p>自然美颜和质感调色是对整帧 RGB 图像进行的本机固定视觉处理。相关处理不检测、分割、识别、定位或重塑人脸，也不提取人脸关键点、面部几何或身份信息。</p>
 
       <h2>4. 保存到系统照片与 iCloud</h2>
       <p>只有用户主动点击保存时，App 才通过 PhotoKit 的“仅添加”（add-only）权限把所选成片复制到系统照片图库；App 不读取照片图库。照片是否同步到 iCloud，由 iOS、用户的 Apple 账户和系统设置控制，App 不控制该同步。用户可在“照片”App 中管理已保存的副本。</p>
@@ -67,7 +67,7 @@
       </ul>
 
       <h2>6. 权限、删除和儿童隐私</h2>
-      <p>用户可以在 iOS“设置”中随时撤销相机、麦克风或照片“仅添加”权限。当前会话中的视频可通过“删除重拍”删除；保存到系统照片后点击“完成”会删除 App 内临时视频。卸载 App 会删除其沙盒内的稿件、设置、校准结果和所有由 App 管理的临时文件。已经复制到系统照片的成片需由用户在“照片”App 中管理。</p>
+      <p>用户可以在 iOS“设置”中随时撤销相机、麦克风或照片“仅添加”权限。用户可在“录制历史”中选择一条正式录制并确认删除；覆盖升级应保留本机录制历史，卸载 App 会删除其沙盒内的稿件、设置、校准结果和全部 App 内录制。已经复制到系统照片的成片继续由用户在“照片”App 中管理。</p>
       <p>App 不面向儿童建立账户，也不以收集儿童个人数据为目的。</p>
 
       <h2>7. 政策更新</h2>
@@ -81,7 +81,7 @@
 
     <section id="en" lang="en">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: August 26, 2026</p>
+      <p class="updated">Last updated: September 3, 2026 · Applies to version 1.0.0 (25) and later versions using the same data practices</p>
       <p class="card">4K Teleprompter does not require registration or sign-in. Camera images, audio, scripts, gaze calibration, and video processing remain on the user's device. The app does not upload this content and does not collect or extract biometric face data.</p>
 
       <h2>1. Face-Related Images and Gaze Calibration</h2>
@@ -96,16 +96,16 @@
       <ul>
         <li><strong>Live preview:</strong> Camera preview frames are processed only in runtime memory (RAM) and are not persistently saved as preview images.</li>
         <li><strong>Calibration clips:</strong> The three calibration clips are written only to the app's temporary directory. They are deleted when calibration finishes, the user leaves calibration, the user records them again, or a file is invalid. If an interruption prevents immediate cleanup, the app removes any remaining temporary clips on the next launch.</li>
-        <li><strong>Recordings in the current public Build 9:</strong> Source recordings and Natural Beauty outputs are stored only in the app's temporary directory. Build 9 has no Recording History and does not write recordings to <code>Application Support</code>. A valid source or Natural Beauty video is retained only for the current recording, processing, and review session.</li>
-        <li><strong>Deletion triggered by user actions:</strong> Tapping Delete and Record Again immediately deletes the current temporary video. When the user taps Save, the app first copies the finished video to system Photos through PhotoKit. When the user then taps Done, the app deletes its temporary video.</li>
-        <li><strong>Natural Beauty processing:</strong> After Natural Beauty succeeds, the app first deletes the source recording that the finished output replaces. If processing fails, the source recording remains temporarily so the user can save or delete it. Invalid files and intermediate files produced by failed processing are deleted immediately.</li>
-        <li><strong>Cleanup after an interruption:</strong> If an unexpected exit leaves a temporary recording named <code>gazespot-UUID.mov</code>, the app removes all such remnants on its next launch.</li>
+        <li><strong>Formal recordings:</strong> Every formal recording that passes basic file validation is automatically stored in the app sandbox at <code>Application Support/GazeSpot/RecordingLibrary/v1/records/&lt;recordID&gt;/</code>. The source video, 1080p effects preview, final 4K video, and any required compatibility copy for one session belong to the same record. This directory is excluded from app backup.</li>
+        <li><strong>Retention and deletion:</strong> Formal recordings do not expire automatically. Closing review, tapping Done, saving to system Photos, or choosing Keep and Record Again does not delete the in-app record. Files are removed only when the user selects a record in Recording History and confirms deletion, or uninstalls the app. This does not delete a copy previously saved to system Photos.</li>
+        <li><strong>Image processing:</strong> Natural Beauty and Texture Color are processed entirely on the device. An effects mode may first create a non-saveable 1080p preview. After confirmation, the app generates the final 4K video again from the original 4K recording; it never upscales the 1080p preview as 4K. Failed or incomplete intermediate files are removed, while the validated source remains part of the same local record.</li>
+        <li><strong>Recovery after interruption:</strong> The app uses atomic records and partial-file cleanup to recover complete formal recordings. Incomplete <code>.partial</code> files are not shown as playable finished videos.</li>
         <li><strong>Scripts and settings:</strong> User-entered scripts and scrolling and recording settings are stored locally for later use.</li>
-        <li><strong>Microphone:</strong> Audio is captured only after the user starts recording and is stored temporarily on the device as part of the current recording.</li>
+        <li><strong>Microphone:</strong> Audio is captured only while the user actively records. Audio in a formal recording follows the same local retention rules as that recording; audio in a calibration clip is deleted with the temporary clip.</li>
       </ul>
 
-      <h2>3. Full-Frame Beauty Processing</h2>
-      <p>Natural Beauty is a fixed visual effect applied locally to the entire RGB frame. It does not detect, segment, recognize, or reshape faces, and it does not extract facial landmarks, face geometry, or identity information.</p>
+      <h2>3. Full-Frame Beauty and Texture Color Processing</h2>
+      <p>Natural Beauty and Texture Color are fixed visual effects applied locally to the entire RGB frame. They do not detect, segment, recognize, locate, or reshape faces, and they do not extract facial landmarks, face geometry, or identity information.</p>
 
       <h2>4. Saving to Photos and iCloud</h2>
       <p>Only when the user taps Save does the app use PhotoKit add-only permission to copy the selected finished video to the system Photos library. The app does not read the Photos library. Whether a saved copy syncs to iCloud is controlled by iOS, the user's Apple Account, and system settings, not by the app. Users manage saved copies in Photos.</p>
@@ -120,7 +120,7 @@
       </ul>
 
       <h2>6. Permissions, Deletion, and Children's Privacy</h2>
-      <p>Users can revoke camera, microphone, or Photos add-only permission at any time in iOS Settings. A video in the current session can be removed with Delete and Record Again; after saving to system Photos, tapping Done deletes the app's temporary video. Uninstalling the app deletes scripts, settings, calibration results, and all app-managed temporary files inside its sandbox. Finished videos already copied to the system Photos library must be managed by the user in Photos.</p>
+      <p>Users can revoke camera, microphone, or Photos add-only permission at any time in iOS Settings. A formal recording can be selected in Recording History and deleted after confirmation. Updating the app should preserve local recording history; uninstalling the app removes scripts, settings, calibration results, and every in-app recording from its sandbox. Finished videos already copied to the system Photos library remain under the user's control in Photos.</p>
       <p>The app does not create accounts for children and is not designed to collect children's personal data.</p>
 
       <h2>7. Policy Changes</h2>

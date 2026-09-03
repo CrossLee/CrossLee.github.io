@@ -27,20 +27,23 @@
 
     <section id="zh-CN" lang="zh-CN">
       <h1>使用支持</h1>
-      <p class="card">4K提词使用设备前置摄像头进行本机提词拍摄，并要求前置摄像头提供精确的 3840 × 2160、30 fps 采集格式。不满足条件的设备会明确阻止录制，不会用 1080p 冒充 4K。</p>
+      <p class="card">4K提词支持竖屏 9:16 与横屏 16:9 的本机提词拍摄，并要求设备前置摄像头提供精确的 3840 × 2160、30 fps 采集格式。不满足条件的设备会明确阻止录制，不会用 1080p 冒充 4K。</p>
 
       <h2>推荐流程</h2>
       <ol>
         <li>在“编辑口播稿”中输入内容并设置字/分速度。</li>
-        <li>固定手机位置，完成三条样片盲选校准。</li>
-        <li>进入拍摄页，按需要调整提词位置、速度或暂停滚动。</li>
-        <li>停止录制并等待文件校验或所选本机效果处理完成。</li>
-        <li>在当前回看页检查成片；需要系统照片副本时再主动保存，保存后点击“完成”。</li>
+        <li>选择竖屏或横屏并固定手机位置，使用同一方向完成三条样片盲选校准。</li>
+        <li>进入拍摄页，在提词卡内上下拖动可调整字幕位置；在卡外上下滑动可调整速度。iOS 18 及以上还可暂停并继续同一条录制，所有支持设备均可使用真实镜头缩放。</li>
+        <li>停止录制并等待文件校验；使用自然美颜或质感调色时，可先查看 1080p 效果预览，满意后再从原始 4K 生成最终 4K。</li>
+        <li>成功录制会自动进入本机录制历史；需要跨 App 使用时，再主动把最终 4K 副本保存到系统照片。</li>
       </ol>
 
       <h2>常见问题</h2>
       <h3>为什么无法开始录制？</h3>
       <p>请确认已经允许相机和麦克风权限，并使用支持前置 4K/30 的 iPhone。模拟器和不满足精确格式的设备不能录制。</p>
+
+      <h3>怎样拍横屏视频？</h3>
+      <p>进入拍摄或校准页后向任一侧横持手机，也可以在拍摄设置中选择“横屏 16:9”。请在倒计时开始前完成旋转；倒计时开始后该条视频的方向会冻结，录制中再旋转手机不会改变成片方向。横屏最终文件为真实 3840 × 2160；竖屏最终文件以 3840 × 2160 编码，并按 2160 × 3840 显示。</p>
 
       <h3>提词文字会进入视频吗？</h3>
       <p>不会。提词层只显示在屏幕预览上，不会写入成片。</p>
@@ -51,11 +54,14 @@
       <h3>三条目光校准短片如何工作？</h3>
       <p>App 在本机生成三条每条约 4 秒的短片，由用户观看并人工盲选最自然的一条，不进行自动人脸或眼神分析。完成、离开、重录或文件无效时会删除临时短片；异常残留会在下次启动时清理。校准后仅保存标准化提词坐标、距离、镜像和模式，直到重新校准覆盖或卸载 App。</p>
 
-      <h3>预览和美颜会检测或重塑人脸吗？</h3>
-      <p>不会。实时预览帧仅在 RAM 中处理；自然美颜是本机整帧固定视觉处理，不检测、识别或重塑人脸。</p>
+      <h3>预览、美颜和质感调色会检测或重塑人脸吗？</h3>
+      <p>不会。实时预览帧仅在 RAM 中处理；自然美颜和质感调色都是本机整帧固定视觉处理，不检测、识别、定位或重塑人脸。</p>
 
-      <h3>当前公开版本 Build 9 的录制保存在哪里，何时删除？</h3>
-      <p>录制原片和自然美颜输出都只在 App 临时目录中保留，没有录制历史，也不会写入 <code>Application Support</code>。有效视频仅供当前录制、处理和回看会话使用。点击“删除重拍”会立即删除；点击保存会先通过 PhotoKit 复制到系统照片，随后点击“完成”会删除 App 内临时视频。自然美颜成功后会先删除被替换原片；处理失败时临时保留原片供用户保存或删除。无效文件和失败中间文件立即清理；异常退出遗留的 <code>gazespot-UUID.mov</code> 会在下次启动时统一清理。</p>
+      <h3>正式录制保存在哪里，何时删除？</h3>
+      <p>每次通过基础文件校验的正式录制都会自动进入 App 本机录制历史。原片、1080p 效果预览、最终 4K 和必要兼容副本由同一条记录关联。关闭回看、点击“完成”、保存到系统照片或“保留并重拍”都不会删除它；只有在“录制历史”中选择该记录并确认删除，或卸载 App，才会移除 App 内文件。</p>
+
+      <h3>1080p 效果预览是不是最终视频？</h3>
+      <p>不是。1080p 文件只用于快速确认自然美颜或质感调色效果，不能保存到系统照片。用户确认满意后，App 会重新从原始 4K 录制生成最终 4K，不会把 1080p 预览放大冒充 4K。</p>
 
       <h3>保存到系统照片时会发生什么？</h3>
       <p>只有用户主动点击保存时，App 才通过 PhotoKit“仅添加”权限复制所选成片；App 不读取照片图库。是否同步到 iCloud 由 iOS、Apple 账户和用户的系统设置控制。</p>
@@ -74,20 +80,23 @@
 
     <section id="en" lang="en">
       <h1>Support</h1>
-      <p class="card">4K Teleprompter records locally with the device's front camera and requires an exact 3840 × 2160 at 30 fps front-camera capture format. On devices that do not meet this requirement, recording is clearly blocked; the app does not present upscaled 1080p as 4K.</p>
+      <p class="card">4K Teleprompter supports local 9:16 portrait and 16:9 landscape teleprompter recording and requires an exact 3840 × 2160 at 30 fps front-camera capture format. On devices that do not meet this requirement, recording is clearly blocked; the app does not present upscaled 1080p as 4K.</p>
 
       <h2>Recommended Workflow</h2>
       <ol>
         <li>Enter your content in Edit Script and set the words-per-minute speed.</li>
-        <li>Secure the phone and complete the blinded selection among three calibration clips.</li>
-        <li>Open the recording screen and adjust teleprompter position or speed, or pause scrolling as needed.</li>
-        <li>Stop recording and wait for file validation or the selected on-device effect to finish.</li>
-        <li>Review the finished video on the current review screen. Save a copy to system Photos only if wanted, then tap Done.</li>
+        <li>Choose portrait or landscape, secure the phone, and complete the three-clip blinded calibration in the same orientation.</li>
+        <li>On the recording screen, drag vertically inside the teleprompter card to move it; swipe vertically outside the card to change speed. On iOS 18 or later, you can pause and resume the same recording. True camera zoom is available on every supported device.</li>
+        <li>Stop and wait for file validation. With Natural Beauty or Texture Color, review the 1080p effects preview first and then generate the final 4K from the original 4K recording.</li>
+        <li>Each successful recording automatically enters local Recording History. Save a final 4K copy to system Photos only when you need to use it outside the app.</li>
       </ol>
 
       <h2>Frequently Asked Questions</h2>
       <h3>Why can't I start recording?</h3>
       <p>Make sure camera and microphone permissions are allowed and use an iPhone that supports front-camera 4K at 30 fps. The simulator and devices without the exact required format cannot record.</p>
+
+      <h3>How do I record landscape video?</h3>
+      <p>Rotate the phone either way after entering recording or calibration, or select Landscape 16:9 in recording settings. Finish rotating before the countdown; the orientation is frozen when the countdown starts, so rotating during the take does not change the finished video's orientation. The final landscape file is true 3840 × 2160. A portrait file is encoded at 3840 × 2160 and displayed as 2160 × 3840.</p>
 
       <h3>Does the teleprompter text appear in the video?</h3>
       <p>No. The teleprompter layer appears only in the screen preview and is not written into the finished video.</p>
@@ -98,11 +107,14 @@
       <h3>How do the three gaze-calibration clips work?</h3>
       <p>The app creates three clips of about four seconds each on the device. The user watches them and manually selects the most natural one without knowing which option produced it; there is no automated face or gaze analysis. Temporary clips are deleted after completion, leaving calibration, recording again, or an invalid file. Any residue after an interruption is removed on the next launch. Only normalized teleprompter coordinates, distance, mirror setting, and mode are retained until recalibration replaces them or the app is uninstalled.</p>
 
-      <h3>Do preview or Natural Beauty detect or reshape faces?</h3>
-      <p>No. Live preview frames are processed only in RAM. Natural Beauty is a local, fixed, full-frame visual effect and does not detect, recognize, or reshape faces.</p>
+      <h3>Do preview, Natural Beauty, or Texture Color detect or reshape faces?</h3>
+      <p>No. Live preview frames are processed only in RAM. Natural Beauty and Texture Color are local, fixed, full-frame visual effects and do not detect, recognize, locate, or reshape faces.</p>
 
-      <h3>Where does the current public Build 9 store recordings, and when are they deleted?</h3>
-      <p>Source recordings and Natural Beauty outputs remain only in the app's temporary directory. There is no Recording History, and recordings are not written to <code>Application Support</code>. A valid video is available only for the current recording, processing, and review session. Delete and Record Again removes it immediately. Save first copies it to system Photos through PhotoKit; tapping Done then removes the app's temporary video. After Natural Beauty succeeds, the replaced source is deleted first. If processing fails, the source remains temporarily for the user to save or delete. Invalid files and failed intermediate files are removed immediately. Any <code>gazespot-UUID.mov</code> left after an unexpected exit is removed on the next launch.</p>
+      <h3>Where are formal recordings stored, and when are they deleted?</h3>
+      <p>Every formal recording that passes basic file validation automatically enters local Recording History. Its source, 1080p effects preview, final 4K video, and any required compatibility copy belong to one record. Closing review, tapping Done, saving to system Photos, or choosing Keep and Record Again does not delete it. In-app files are removed only when the user selects the record in Recording History and confirms deletion, or uninstalls the app.</p>
+
+      <h3>Is the 1080p effects preview the final video?</h3>
+      <p>No. It is only a fast preview of Natural Beauty or Texture Color and cannot be saved to system Photos. After the user confirms the effect, the app generates the final 4K video again from the original 4K recording and never upscales the 1080p preview as 4K.</p>
 
       <h3>What happens when I save to system Photos?</h3>
       <p>Only when the user taps Save does the app copy the selected finished video using PhotoKit add-only permission. The app does not read the Photos library. iCloud syncing is controlled by iOS, the user's Apple Account, and system settings.</p>
